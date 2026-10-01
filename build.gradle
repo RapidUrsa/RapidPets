@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.rapidursa'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.runelite.net' }
+}
+
+dependencies {
+    compileOnly 'net.runelite:client:latest.release'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    testImplementation 'net.runelite:client:latest.release'
+    testImplementation 'junit:junit:4.13.2'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 11
+}
+
+tasks.register('runClient', JavaExec) {
+    group = 'application'
+    description = 'Runs RuneLite with Rapid Pets loaded'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'com.rapidursa.shoulderpets.ShoulderPetsPluginTest'
+    jvmArgs = ['-ea']
+    args = ['--developer-mode']
+}

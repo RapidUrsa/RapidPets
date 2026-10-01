@@ -1,4 +1,4 @@
-# Rapid Pets v1.0.0
+# Rapid Pets v1.0.1
 
 Collect client-side creature eggs and hatch micro pets that run beside your player. Egg chat messages, ground labels and collection sections match the rarity colour. The screen timer appears only after pickup and counts only logged-in time.
 

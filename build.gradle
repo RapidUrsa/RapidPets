@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'com.rapidursa'
-version = '1.0.0'
+version = '1.0.1'
 
 repositories {
     mavenCentral()
@@ -12,8 +12,6 @@ repositories {
 
 dependencies {
     compileOnly 'net.runelite:client:latest.release'
-    compileOnly 'org.projectlombok:lombok:1.18.36'
-    annotationProcessor 'org.projectlombok:lombok:1.18.36'
     testImplementation 'net.runelite:client:latest.release'
     testImplementation 'junit:junit:4.13.2'
 }
